@@ -1,6 +1,17 @@
 # Ethical-Hacking
 This is a collection of python projects and python scripts for various . They are simple, but they cover some of the fundamentals of the technology and the concepts behind modern hacking.
 
+## 🚪 Backdoor - Educational Test Malware
+This script is a educational and completely inoffensive version of the modern malware known as a backdoor. It displays the basic functionality of the virus establishing a reverse shell connection and giving the attacker root access to terminal and directories. Its features are:
+* Socket Connection Datastream: The most interesting and hardest feature of the script was figuring out how to use the socket python library to send commands and receive supposedly "sensitive" information about the target machine. Data is sliced into chunks of a kilobyte of either string datatype or binary data specifically marked with "End-of" markers.
+* Basic Remote Commands: Basic OS commands can be executed remotely on the target machine such as echo (debug), cd, dir
+* Download: Possibility to download files from the target machine
+* WI-FI Passwords Retrieval: The backdoor uses terminal access on the target machine to retrieve saved WI-FI SSID-Password entries to help the attacker map and gain access inside the private network of the victim or learn more about the machine's network's history
+* Google Passwords Extraction: Using exploits of Google Chrome's flawed password storage and autocompletion feature, the script crawls through the target machine to retrieve a specific .db file and send it to the attacker, allowing him to fetch all passwords saved on Chrome
+* Machine Information Retrieval: Uses root access to transmit several pieces of information about the target machine such as username and user directory or full network configuration
+* Listener Customization: Implemented settings and preferences system
+As aforementioned, the script is completely harmless as it is lacking any malware obfuscation and replication technique and it is easily detectable by any modern antivirus software. Just for educational purpose.
+
 ## 🔐 Encrypted Communication (Encryption & Decryption)
 A pair of CLI scripts (Encryption.py and Decryption.py) that implement a multi-layered, custom encryption algorithm. Rather than relying on simple character substitution, these scripts combine data format conversions with a date-dependent book cipher approach.
 Features:
@@ -17,6 +28,13 @@ Features:
 * TTS Audio Feedback: Utilizes pyttsx3 to initialize a local speech engine, allowing the assistant to speak responses, confirm commands, and ask for missing inputs (like message content).
 * WhatsApp Automation: Integrates pywhatkit to send instant WhatsApp messages to a predefined dictionary of contacts through pure voice commands.
 * Time and Date Parsing: Uses the datetime module to parse specific temporal queries (e.g., "what time is it", "which day is today") and return formatted audio responses.
+
+## ⌨️ Keylogger - Educational Test Malware
+This script is a educational and completely inoffensive version of the modern malware known as a keylogger. It displays the basic functionality of the virus recording key presses and transmitting reports to its operator via email. Its features are:
+* Keystroke recording: makes use of the pynput.keyboard library to record the key pressed by the target device and stores them
+* Text Parsing and Processing: Implemented callback function that preprocesses the text before sending it, adjusting format, ignoring characters that can't be encoded in ASCII code and replaces other pieces of text with a placeholder propting the attacker that a key was pressed but that it wasn't possible to send it
+* Automated Reporting: Compiles logs which are sent to the operator at fixed time intervals using the smtplib library and thus transmitting via email
+As aforementioned, the script is completely harmless as it is lacking any malware obfuscation and replication technique and it is easily detectable by any modern antivirus software. Just for educational purpose.
 
 ## 🛜 Network Scanner (ARP Reconnaissance)
 This script is a basic but functional (only on Windows) network mapping tool built with Python and scapy. It performs a Layer 2 network sweep by broadcasting Address Resolution Protocol (ARP) requests across a specified subnet. By parsing the responses, it dynamically maps active hosts and their corresponding MAC addresses on the local network.
