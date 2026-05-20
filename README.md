@@ -1,16 +1,6 @@
 # Ethical-Hacking
 This is a collection of python projects and python scripts for various . They are simple, but they cover some of the fundamentals of the technology and the concepts behind modern hacking.
 
-
-## 🛜 Network Scanner (ARP Reconnaissance)
-This script is a basic but functional (only on Windows) network mapping tool built with Python and scapy. It performs a Layer 2 network sweep by broadcasting Address Resolution Protocol (ARP) requests across a specified subnet. By parsing the responses, it dynamically maps active hosts and their corresponding MAC addresses on the local network.
-While simple, this project serves as a practical application of foundational computer networking concepts. It demonstrates a theoretical and applied understanding of the following areas:
-* Network Protocols: Mechanics of Layer 2 (Ethernet/ARP) and Layer 3 (IPv4) of the OSI model.
-* Addressing Architecture: The structural differences between public and private IP ranges and MAC addressing.
-* Protocol Fundamentals: Theoretical knowledge of transport layer protocols (TCP/UDP) and application layer resolution systems (DNS).
-* Traffic Analysis: Basic knowledge with the operational logic behind professional network analysis and reconnaissance tools, such as Wireshark and Nmap.
-* Security Architecture Awareness: Understanding how local network broadcasting and ARP resolution function is the prerequisite for comprehending Layer 2 vulnerabilities, such as ARP-Spoofing, which   forms the basis of Man-in-the-Middle (MITM) attacks.
-
 ## 🔐 Encrypted Communication (Encryption & Decryption)
 A pair of CLI scripts (Encryption.py and Decryption.py) that implement a multi-layered, custom encryption algorithm. Rather than relying on simple character substitution, these scripts combine data format conversions with a date-dependent book cipher approach.
 Features:
@@ -28,3 +18,20 @@ Features:
 * WhatsApp Automation: Integrates pywhatkit to send instant WhatsApp messages to a predefined dictionary of contacts through pure voice commands.
 * Time and Date Parsing: Uses the datetime module to parse specific temporal queries (e.g., "what time is it", "which day is today") and return formatted audio responses.
 
+## 🛜 Network Scanner (ARP Reconnaissance)
+This script is a basic but functional (only on Windows) network mapping tool built with Python and scapy. It performs a Layer 2 network sweep by broadcasting Address Resolution Protocol (ARP) requests across a specified subnet. By parsing the responses, it dynamically maps active hosts and their corresponding MAC addresses on the local network.
+While simple, this project serves as a practical application of foundational computer networking concepts. It demonstrates a theoretical and applied understanding of the following areas:
+* Network Protocols: Mechanics of Layer 2 (Ethernet/ARP) and Layer 3 (IPv4) of the OSI model.
+* Addressing Architecture: The structural differences between public and private IP ranges and MAC addressing.
+* Protocol Fundamentals: Theoretical knowledge of transport layer protocols (TCP/UDP) and application layer resolution systems (DNS).
+* Traffic Analysis: Basic knowledge with the operational logic behind professional network analysis and reconnaissance tools, such as Wireshark and Nmap.
+* Security Architecture Awareness: Understanding how local network broadcasting and ARP resolution function is the prerequisite for comprehending Layer 2 vulnerabilities, such as ARP-Spoofing, which   forms the basis of Man-in-the-Middle (MITM) attacks.
+
+## ⏱️ PC Usage Manager & Remote Email Access and Control
+A dual-script system (PCUsage.py and mailistener.py) designed to monitor, limit, and remotely manage local machine access. Built as a practical access control mechanism for shared hardware, it operates as a background service that enforces daily session limits and processes administrative commands asynchronously via an email bridge.
+The features are:
+* Session Enforcement & State Management: Tracks active usage time by constantly reading and updating a local state file (usage_log.txt). When the daily time quota is reached, it automatically minimizes all windows and forces an OS-level shutdown.
+* Remote IMAP Control: The mailistener.py script acts as a daemon, continuously polling a designated inbox using the imaplib library. By sending an email with the subject "PCUsage Command", an administrator can parse arguments to remotely extend, reduce, or set the time limit, force an immediate timeout (drain), or request specific log data.
+* Automated Reporting (SMTP): Uses smtplib to parse the local log data and automatically compile and email weekly usage statistics, or push on-demand daily/weekly/monthly reports when queried remotely.
+* Native OS Notifications: Integrates the plyer library to push system-level desktop warnings at specific countdown intervals (e.g., 45m, 30m, 1m remaining) or to display custom text messages sent remotely via the msg email command.
+This project relies on Windows-specific terminal commands for system operations (os.system("shutdown /s /t 1")) and window management (pyautogui.hotkey('win','d')). It requires the plyer and pyautogui libraries. To deploy, valid SMTP/IMAP credentials (using App Passwords for secure authentication) must be configured within the global variables of both scripts.
