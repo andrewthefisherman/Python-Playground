@@ -1,5 +1,8 @@
-# Ethical-Hacking
+# Python Playground
 This is a collection of python projects and python scripts for various . They are simple, but they cover some of the fundamentals of the technology and the concepts behind modern hacking.
+This repository is a collection of my early, experimental python projects and scripts.
+These scripts are mostly amateur and simple, they were built over the years as a way to create and practice with Python, but they cover some of the fundamentals of modern technology and the basics concepts behind modern software. I used this playground to test out different libraries, automate small tasks, and figure out how things work behind the scenes.
+While you won't find enterprise-grade architecture here, these projects demonstrate my practical, hands-on experience with the language, my ability to script functional logic, and my genuine curiosity for solving everyday problems through code.
 
 ## 🚪 Backdoor - Educational Test Malware
 This script is a educational and completely inoffensive version of the modern malware known as a backdoor. It displays the basic functionality of the virus establishing a reverse shell connection and giving the attacker root access to terminal and directories. Its features are:
@@ -11,6 +14,7 @@ This script is a educational and completely inoffensive version of the modern ma
 * Machine Information Retrieval: Uses root access to transmit several pieces of information about the target machine such as username and user directory or full network configuration
 * Listener Customization: Implemented settings and preferences system
 As aforementioned, the script is completely harmless as it is lacking any malware obfuscation and replication technique and it is easily detectable by any modern antivirus software. Just for educational purpose.
+The code is written in classes and scalable.
 
 ## 🔐 Encrypted Communication (Encryption & Decryption)
 A pair of CLI scripts (Encryption.py and Decryption.py) that implement a multi-layered, custom encryption algorithm. Rather than relying on simple character substitution, these scripts combine data format conversions with a date-dependent book cipher approach.
@@ -35,6 +39,7 @@ This script is a educational and completely inoffensive version of the modern ma
 * Text Parsing and Processing: Implemented callback function that preprocesses the text before sending it, adjusting format, ignoring characters that can't be encoded in ASCII code and replaces other pieces of text with a placeholder propting the attacker that a key was pressed but that it wasn't possible to send it
 * Automated Reporting: Compiles logs which are sent to the operator at fixed time intervals using the smtplib library and thus transmitting via email
 As aforementioned, the script is completely harmless as it is lacking any malware obfuscation and replication technique and it is easily detectable by any modern antivirus software. Just for educational purpose.
+The code is written in classes and scalable.
 
 ## 🛜 Network Scanner (ARP Reconnaissance)
 This script is a basic but functional (only on Windows) network mapping tool built with Python and scapy. It performs a Layer 2 network sweep by broadcasting Address Resolution Protocol (ARP) requests across a specified subnet. By parsing the responses, it dynamically maps active hosts and their corresponding MAC addresses on the local network.
@@ -43,7 +48,7 @@ While simple, this project serves as a practical application of foundational com
 * Addressing Architecture: The structural differences between public and private IP ranges and MAC addressing.
 * Protocol Fundamentals: Theoretical knowledge of transport layer protocols (TCP/UDP) and application layer resolution systems (DNS).
 * Traffic Analysis: Basic knowledge with the operational logic behind professional network analysis and reconnaissance tools, such as Wireshark and Nmap.
-* Security Architecture Awareness: Understanding how local network broadcasting and ARP resolution function is the prerequisite for comprehending Layer 2 vulnerabilities, such as ARP-Spoofing, which   forms the basis of Man-in-the-Middle (MITM) attacks.
+* Security Architecture Awareness: Understanding how local network broadcasting and ARP resolution function is the prerequisite for comprehending Layer 2 vulnerabilities, such as ARP-Spoofing, which forms the basis of Man-in-the-Middle (MITM) attacks.
 
 ## ⏱️ PC Usage Manager & Remote Email Access and Control
 A dual-script system (PCUsage.py and mailistener.py) designed to monitor, limit, and remotely manage local machine access. Built as a practical access control mechanism for shared hardware, it operates as a background service that enforces daily session limits and processes administrative commands asynchronously via an email bridge.
